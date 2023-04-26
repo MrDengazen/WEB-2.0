@@ -220,7 +220,7 @@ def view_news(id):
     if form.validate_on_submit():
             return redirect('/')
     return render_template('cdel.html',
-                           title='Редактирование сделки',
+                           title='Просмотр сделки',
                            form=form
                            )
 

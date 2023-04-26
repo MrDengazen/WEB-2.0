@@ -12,14 +12,13 @@
         {{item.content}}
     </div>
     <div>
-        Дата написания - {{item.created_date}}
         {% if current_user.is_authenticated and current_user == item.user %}
     <div>
+        <a href="/cdel_view/{{ item.id }}" class="btn btn-info">
+            Посмотреть
+        </a>
         <a href="/cdel/{{ item.id }}" class="btn btn-warning">
             Изменить
-        </a>
-        <a href="/cdel_view/{{ item.id }}" class="btn btn-warning">
-            Смотреть
         </a>
         <a href="/cdel_delete/{{ item.id }}" class="btn btn-danger">
             Удалить
