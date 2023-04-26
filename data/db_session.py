@@ -1,6 +1,5 @@
 import sqlalchemy as sa
-import sqlalchemy.orm as orm
-from sqlalchemy.orm import Session
+from sqlalchemy.orm import Session, sessionmaker
 import sqlalchemy.ext.declarative as dec
 
 SqlAlchemyBase = dec.declarative_base()
@@ -21,7 +20,7 @@ def global_init(db_file):
     print(f"Подключение к базе данных по адресу {conn_str}")
 
     engine = sa.create_engine(conn_str, echo=False)
-    __factory = orm.sessionmaker(bind=engine)
+    __factory = sessionmaker(bind=engine)
 
     from . import __all_models
 
