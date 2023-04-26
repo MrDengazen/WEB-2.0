@@ -17,7 +17,7 @@ app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
 
 def main():
     db_session.global_init("db/blogs.db")
-    port = int(os.environ.get("PORT", 5000))
+    port = int(os.environ.get("PORT", 7000))
     app.run(host='0.0.0.0', port=port)
     # app.register_blueprint(news_api.blueprint)
     app.run()
